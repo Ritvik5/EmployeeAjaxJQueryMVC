@@ -1,0 +1,80 @@
+﻿@model EmployeeAjaxJquery.Models.Employee
+
+@{
+    ViewData["Title"] = "Index";
+}
+<button class="btn btn-sm btn-primary m-2" id="btnAddEmployee">Add Employee</button>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>EmployeeId</th>
+            <th>Name</th>
+            <th>ProfileImage</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>StartDate</th>
+            <th>Notes</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody id="table_data"></tbody>
+</table>
+
+<div class="madal fade modal" id="EmployeeMadal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="text-info modal-title">Add Employee</h1>
+                <button class="close text-danger" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="form-group">
+                        <label>EmployeeId</label>
+                        <input type="text" class="form-control" id="EmployeeId" disabled="disabled"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Enter Name" class="form-control" id="Name" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>ProfileImage</label>
+                        <input type="text" placeholder="Select Photo" class="form-control" id="ProfileImage" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <input type="text" placeholder="Select Gender" class="form-control" id="Gender" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <input type="text" placeholder="Select Department" class="form-control" id="Department" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>Salary</label>
+                        <input type="text" placeholder="Enter Salary" class="form-control" id="Salary" autocomplete="off" />
+                    </div>
+                    <div class="form-group">
+                        <label>StartDate</label>
+                        <input type="text" placeholder="Enter Date" class="form-control" id="StartDate" autocomplete="off"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <input type="text" placeholder="Enter Note" class="form-control" id="Notes" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="AddEmployee();" id="AddEmployee">Save</button>
+                <button class="btn btn-warning" onclick="UpdateEmployee();" id="btnUpdate">Update</button>
+                <button class="btn btn-danger btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/customjs.js"></script>
