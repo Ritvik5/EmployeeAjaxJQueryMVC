@@ -37,7 +37,12 @@ function ShowEmployeeData() {
 
 
 $('#btnAddEmployee').click(function () {
+    ClearTextBox();
     $('#EmployeeMadal').modal('show');
+    $('#empId').hide();
+    $('#AddEmployee').css('display', 'block');
+    $('#btnUpdate').css('display', 'none');
+    $('#employeeHeading').text('Add Employee');
 })
 
 function AddEmployee() {
@@ -104,7 +109,7 @@ function Edit(employeeId){
             $('#Notes').val(response.notes);
             $('#AddEmployee').css('display', 'none');
             $('#btnUpdate').css('display', 'block');
-
+            $('#employeeHeading').text('Update Employee');
             //$('#AddEmployee').hide();
             //$('#btnUpdate').show();
 

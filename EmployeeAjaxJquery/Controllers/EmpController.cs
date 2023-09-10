@@ -84,6 +84,7 @@ namespace EmployeeAjaxJquery.Controllers
                 throw;
             }
         }
+        [HttpPost]
         public JsonResult Update(Employee employee)
         {
             try
